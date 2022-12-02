@@ -14,3 +14,21 @@ end
 
 list = [ 0, 3, 5, 4, -5, 10, 1, 90 ]
 puts my_min_efficient(list)  # =>  -5
+
+def largest_contiguous_subsum(list)
+    subarrays = []
+    (0...list.length - 1).each do |i|
+
+        (i + 1...list.length).each do |j|
+            subarrays << list[i..j].sum
+        end
+    end
+    subarrays.max
+end
+
+list = [5, 3, -7]
+puts largest_contiguous_subsum(list) # => 8
+
+list = [2, 3, -6, 7, -6, 7]
+puts largest_contiguous_subsum(list) # => 8 (from [7, -6, 7])
+
