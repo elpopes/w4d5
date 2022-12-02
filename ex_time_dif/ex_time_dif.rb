@@ -32,3 +32,25 @@ puts largest_contiguous_subsum(list) # => 8
 list = [2, 3, -6, 7, -6, 7]
 puts largest_contiguous_subsum(list) # => 8 (from [7, -6, 7])
 
+
+
+def largest_contiguous_subsum_2(list)
+    largest = 0
+    cur 
+    (0...list.length - 1).each do |i|
+       list.inject 
+
+    end
+end
+
+list = [5, 3, -7]
+puts largest_contiguous_subsum_2(list) # => 8
+
+list = [2, 3, -6, 7, -6, 7]
+puts largest_contiguous_subsum_2(list) # => 8 (from [7, -6, 7])
+
+
+
+largest = array.sum
+(0..array.length).each {|i| largest = array[0..i] if array[0..i] > largest} 
+(0..array.length).reverse_each {| largest = array[0..i] if array[0..i] > largest} 
