@@ -25,3 +25,25 @@ end
 
 p second_first_anagram?("gizmo", "sally")    #=> false
 p second_first_anagram?("elvis", "lives")    #=> true
+
+
+def third_anagram?(str1, str2)
+    str1.chars.sort == str2.chars.sort
+end
+
+p third_anagram?("gizmo", "sally")    #=> false
+p third_anagram?("elvis", "lives")    #=> true
+
+
+def fourth_anagram?(str1, str2)
+    hash = Hash.new(0)
+    return false if str1.length != str2.length
+    str1.each_char.with_index do |char, i|
+        hash[char] += 1
+        hash[str2[i]] -= 1
+    end
+    hash.values.all?(0)
+end
+
+p fourth_anagram?("gizmo", "sally")    #=> false
+p fourth_anagram?("elvis", "lives")    #=> true
