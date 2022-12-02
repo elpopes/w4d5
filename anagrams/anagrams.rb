@@ -25,3 +25,19 @@ end
 
 p second_first_anagram?("gizmo", "sally")    #=> false
 p second_first_anagram?("elvis", "lives")    #=> true
+
+def second_anagram?(str1, str2)
+    chars1 = str1.split('')
+    chars2 = str2.split('')
+    chars1.each_with_index do |char, i|
+            index = chars2.find_index(char)
+            unless index.nil?
+                chars2.delete_at(index)
+            end
+    end
+    chars2.empty?
+end
+
+p second_anagram?("gizmo", "sally")    #=> false
+p second_anagram?("elvis", "lives")    #=> true
+
